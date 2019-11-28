@@ -57,10 +57,10 @@ async def homepage(request):
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
     req = await request.form()
-    input_text= req["input-text"]
+    input_text= req["""input-text"""]
 
     prediction = learn.predict(input_text)[0]
-    return JSONResponse({'The genre is': str(prediction)})
+    return JSONResponse({'The genre is' + str(prediction)})
 
 
 if __name__ == '__main__':
