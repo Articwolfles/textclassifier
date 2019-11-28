@@ -60,7 +60,7 @@ async def analyze(request):
     input_text= req["""input-text"""]
 
     prediction = learn.predict(input_text)[0]
-    return JSONResponse({'The genre is': str(prediction)})
+    return JSONResponse({'result': 'The genre is ' + str(prediction)})
 
 
 if __name__ == '__main__':
